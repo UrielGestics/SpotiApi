@@ -99,8 +99,9 @@ const obtenerCancionesAlbum = async() =>{
                     lista+=`
             <tr>
                             <td style='vertical-align: middle;'>${idx+1}</td>
-                            <td><img class="rounded img-fluid" src="${urlImagen}" alt=""></td>
-                            <td style='vertical-align: middle;'>${cancion.name}</td>
+                            <td style='vertical-align: middle;'>
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/${idCacnion}?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                            </td>
                             <td style='vertical-align: middle;'>${popularity}/100</td>
                             <td style='vertical-align: middle;'>${msToTime(cancion.duration_ms)}</td>
                         </tr>`

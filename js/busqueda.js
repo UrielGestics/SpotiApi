@@ -17,17 +17,10 @@ const obtenerResultadoBusqueda = async(q) =>{
             element.artists.forEach(artista => {
                 artistasNombres+='<label class="card-text me-3"><span class="badge bg-primary">'+artista.name+'</span></label>'
             });
-
-            resultadosBusqueda+= `<div onclick="ejemplo('${element.id}')" data-id="${element.id}" class="albumSelecionado"  class="col-md-3" >
-            <div class="card h-100">
-              <img height="400" src="${element.images[0].url}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h3 class="card-title text-center">${element.name}</h3>
-               ${artistasNombres}
-              </div>
-            </div>
-          </div>`;
+            
+            resultadosBusqueda+= crearTarjeta(element.id,element.images[0].url,element.name,artistasNombres);
         });
+        
         if(albums.items.length == 0){
             document.getElementById("resultadosEncontrados").innerHTML = '';
             document.getElementById("mensajes").innerHTML = `

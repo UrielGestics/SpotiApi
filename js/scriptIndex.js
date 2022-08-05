@@ -46,15 +46,7 @@ const obtenerAlbunes = async () =>{
                 artistasNombres+='<label class="card-text me-3"><span class="badge bg-primary">'+artista.name+'</span></label>'
             });
             artistasNombres+='</center>'
-            plantilla+= `<div class="albumSelecionado" data-id='${element.id}' class="col-md-3" >
-            <div class="card h-100">
-              <img height="400" src="${element.images[0].url}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h3 class="card-title text-center">${album}</h3>
-               ${artistasNombres}
-              </div>
-            </div>
-          </div>`;
+            plantilla+= crearTarjeta(element.id,element.images[0].url,element.name,artistasNombres);
         });
        
         document.getElementById("albunes").innerHTML = plantilla;
